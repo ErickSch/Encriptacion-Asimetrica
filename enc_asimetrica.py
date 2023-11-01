@@ -77,10 +77,10 @@ mi_palabra = input("Ingresa una frase o palabra: ")
 
 # C = (M^e)mod n
 cifrada = cifrar(mi_palabra)
-print(f'palabra cifrada: {cifrada}')
+print(f'Palabra o frase cifrada: {cifrada}')
 
 # (C^d)mod n = M
 descifrada = descifrar(cifrada)
-print(f'palabra descifrada: {descifrada}')
+print(f'Palabra o frase descifrada: {descifrada}')
 
 

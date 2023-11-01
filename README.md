@@ -1,6 +1,7 @@
 # Encriptación-Asimétrica
 
 ## Integrantes
+
 - Jeannette Arjona
 - Erick Schiller
 - Alejandro Guzmán
@@ -9,7 +10,7 @@
 
 ## Descripción
 
-- Algoritmo RSA de cifrado asimétrico para el cifrado y descifrado de texto.
+- Algoritmo RSA (Rivest, Shamir & Adleman) de cifrado asimétrico para el cifrado y descifrado de texto.
 
 ## Requerimientos
 
@@ -32,6 +33,16 @@
 7. Cifrado: C = (M^e)mod n. (C: código cifrado, M: código ASCII de cada caracter)
 
 8. Descifrado: (C^d)mod n = M. (C: código cifrado, M: código ASCII de cada caracter)
+
+## Pruebas
+
+- Prueba 1: Python
+
+![Prueba1](/Prueba1.png)
+
+- Prueba 2: Esto es una prueba
+
+![Prueba1](/Prueba2.png)
 
 ### Referencias:
 
