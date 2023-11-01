@@ -61,7 +61,6 @@ n = p * q
 z = (p - 1) * (q - 1)
 
 # e: impar, sin multiplos comunes con z, 1 < e < z, MCD(z ,e) = 1
-# Probar buscando con un for loop, el menor valor que satisfaga la condicion
 e = 2
 while (e % 2 == 0 or math.gcd(e, z) != 1):
     e += 1
@@ -71,14 +70,16 @@ d = inverso_multiplicativo(e, z)
 # Clave pública: (e, n)
 # Clave privada: (d, n)
 
-
-# mi_palabra = "Hola como estas yo bien y tu"
-
 mi_palabra = input("Ingresa una frase o palabra: ")
 
+# C = código cifrado
+# M = código ASCII de cada letra
+
+# C = (M^e)mod n
 cifrada = cifrar(mi_palabra)
 print(f'palabra cifrada: {cifrada}')
 
+# (C^d)mod n = M
 descifrada = descifrar(cifrada)
 print(f'palabra descifrada: {descifrada}')
 
