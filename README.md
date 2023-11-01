@@ -22,7 +22,7 @@
 
 2. Calcular n: n = p * q.
 
-3. Calcular z: z = (p - 1) * (q - 1)
+3. Calcular z: z = (p - 1) * (q - 1).
 
 4. Elegir e: número aleatorio y que el mayor común divisor entre e y z sea el 1.
 
@@ -30,9 +30,9 @@
 
 6. Clave pública = (e, n) , clave privada = (d, n). La clave pública puede ser compartida, la clave privada no.
 
-7. Cifrado: C = (M^e)mod n. (C: código cifrado, M: código ASCII de cada caracter)
+7. Cifrado: C = (M^e)mod n. (C: código cifrado, M: código ASCII de cada caracter).
 
-8. Descifrado: (C^d)mod n = M. (C: código cifrado, M: código ASCII de cada caracter)
+8. Descifrado: (C^d)mod n = M. (C: código cifrado, M: código ASCII de cada caracter).
 
 ## Pruebas
 
