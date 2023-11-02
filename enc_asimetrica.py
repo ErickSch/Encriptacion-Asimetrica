@@ -72,15 +72,33 @@ d = inverso_multiplicativo(e, z)
 
 mi_palabra = input("Ingresa una frase o palabra: ")
 
-# C = código cifrado
-# M = código ASCII de cada letra
+opcion = -1
+cifrada = []
+descifrada = ""
 
-# C = (M^e)mod n
-cifrada = cifrar(mi_palabra)
-print(f'Palabra o frase cifrada: {cifrada}')
+while (opcion != "3"):
+    print("""
+-----------------------
+    1. Cifrar
+    2. Descifrar
+    3. Salir
+    """)
+    opcion = input("Ingrese una opción: ")
+    print("-----------------------")
 
-# (C^d)mod n = M
-descifrada = descifrar(cifrada)
-print(f'Palabra o frase descifrada: {descifrada}')
+    # C = código cifrado
+    # M = código ASCII de cada letra
+    if (opcion == "1"):
+        # C = (M^e)mod n
+        cifrada = cifrar(mi_palabra)
+        print(f'Palabra o frase cifrada: {cifrada}')
+    
+    elif (opcion == "2"):
+        if (len(cifrada) == 0):
+            print("La palabra no ha sido cifrada")
+        else:
+            # (C^d)mod n = M
+            descifrada = descifrar(cifrada)
+            print(f'Palabra o frase descifrada: {descifrada}')
 
 
