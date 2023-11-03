@@ -26,9 +26,9 @@ def cifrar(palabra):
     
     return letras_palabra
 
-def descifrar(letras_cifradas):
+def descifrar(letras_cifradas, d2, n2):
     for i in range(len(letras_cifradas)):
-        letra = chr((letras_cifradas[i]**d) % n)
+        letra = chr((letras_cifradas[i]**d2) % n2)
         letras_cifradas[i] = letra
     
     palabra = ""
@@ -70,7 +70,6 @@ d = inverso_multiplicativo(e, z)
 # Clave pública: (e, n)
 # Clave privada: (d, n)
 
-mi_palabra = input("Ingresa una frase o palabra: ")
 
 opcion = -1
 cifrada = []
@@ -89,16 +88,40 @@ while (opcion != "3"):
     # C = código cifrado
     # M = código ASCII de cada letra
     if (opcion == "1"):
+        mi_palabra = input("Ingresa una frase o palabra: ")
         # C = (M^e)mod n
         cifrada = cifrar(mi_palabra)
         print(f'Palabra o frase cifrada: {cifrada}')
+        print(f'Clave pública: ({e}, {n})')
+        print(f'Clave privada: ({d}, {n})')
     
     elif (opcion == "2"):
         if (len(cifrada) == 0):
             print("La palabra no ha sido cifrada")
         else:
+            # Darle formato al input de la palabra cifrada
+            mi_palabra_cifrada = input("Ingresa la palabra cifrada ([#, #...]): ")
+            mi_palabra_cifrada = mi_palabra_cifrada.replace('[', '')
+            mi_palabra_cifrada = mi_palabra_cifrada.replace(']', '')
+            mi_palabra_cifrada = mi_palabra_cifrada.split(', ')
+            mi_palabra_cifrada = mi_palabra_cifrada = (int(val) for val in mi_palabra_cifrada)
+            mi_palabra_cifrada = list(mi_palabra_cifrada)
+
+            # Darle formato al input de la clave privada
+            clave_p = input("Ingresa clave privada (d, n): ")
+            clave_p = clave_p.replace('(', '')
+            clave_p = clave_p.replace(')', '')
+            clave_p = clave_p.split(", ")
+            clave_p = (int(num) for num in clave_p)
+            clave_p = list(clave_p)
+
+            d2 = clave_p[0]
+            n2 = clave_p[1]
+
             # (C^d)mod n = M
-            descifrada = descifrar(cifrada)
+            descifrada = descifrar(mi_palabra_cifrada, d2, n2)
             print(f'Palabra o frase descifrada: {descifrada}')
+
+
 
 
